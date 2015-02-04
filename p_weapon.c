@@ -882,9 +882,9 @@ void Weapon_HyperBlaster_Fire (edict_t *ent)
 			else
 				effect = 0;
 			if (deathmatch->value)
-				damage = 15;
+				damage = 5;
 			else
-				damage = 20;
+				damage = 10;
 			Blaster_Fire (ent, offset, damage, true, effect);
 			if (! ( (int)dmflags->value & DF_INFINITE_AMMO ) )
 				ent->client->pers.inventory[ent->client->ammo_index]--;
@@ -918,9 +918,9 @@ void Weapon_HyperBlaster_Fire (edict_t *ent)
 void Weapon_HyperBlaster (edict_t *ent)
 {
 	static int	pause_frames[]	= {0};
-	static int	fire_frames[]	= {6, 7, 8, 9, 10, 11, 0};
+	static int	fire_frames[]	= {9, 10, 13, 15, 17, 19, 0};
 
-	Weapon_Generic (ent, 5, 20, 49, 53, pause_frames, fire_frames, Weapon_HyperBlaster_Fire);
+	Weapon_Generic (ent, 5, 20, 1, 100, pause_frames, fire_frames, Weapon_HyperBlaster_Fire);
 }
 
 /*
